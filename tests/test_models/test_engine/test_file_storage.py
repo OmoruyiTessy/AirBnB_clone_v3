@@ -123,6 +123,8 @@ class TestFileStorage(unittest.TestCase):
 
         state_data = {"name": "Florida"}
         state_instance = State(**state_data)
+        storage.new(state_instance)
+        storage.save()
 
         retrieved_data = storage.get(State, state_instance.id)
 
